@@ -1,9 +1,9 @@
-.app {
-  padding: 24px;
+.layout {
+  display: flex;
 }
 
-.kpi-container {
-  display: flex;
-  gap: 16px;
-  margin-top: 24px;
+.main-content {
+  flex: 1;
+  margin-left: 60px; /* sesuaikan dengan width sidebar collapse */
+  padding: 24px;
 }

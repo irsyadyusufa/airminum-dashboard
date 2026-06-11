@@ -2,7 +2,7 @@
   border: 1px solid #d1d5db;
   border-radius: 12px;
   padding: 20px;
-  width: 250px;
+  width: 220px;
 
   background-color: white;
 }
@@ -11,19 +11,23 @@
   transform: translateY(-3px);
 }
 
-.kpi-card h2 {
-  color: black;
-  margin: 0;
-  font-size: 18px;
+.kpi-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(43, 43, 43);
+  margin: 20px 0;
 }
 
-.kpi-card p {
-  color: grey;
+.kpi-value {
+  font-size: 42px;
+  font-weight: 650;
+  color: rgb(77, 77, 77);
+  margin: 20px 0;
 }
 
-.kpi-card h2 {
-  margin: 0;
-  font-size: 18px;
+.kpi-gap {
+  color: #dc2626;
+  font-weight: 600;
 }
 
 .kpi-card p {

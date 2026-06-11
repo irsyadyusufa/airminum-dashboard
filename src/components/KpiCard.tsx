@@ -2,14 +2,23 @@ import "./KpiCard.css";
 
 type KpiCardProps = {
   title: string;
-  value: string;
+  capaian: string;
+  target: string;
+  gap: string;
 };
-
-function KpiCard({ title, value }: KpiCardProps) {
+function KpiCard({
+  title,
+  capaian,
+  target,
+  gap,
+  gapRt,
+}: KpiCardProps) {
   return (
     <div className="kpi-card">
-      <h2>{title}</h2>
-      <p>{value}</p>
+        <p className="kpi-title">{title}</p>
+        <p className="kpi-value">{capaian}</p>
+        <p>Target: {target}</p>
+        <p className="kpi-gap">Gap: {gap}</p>
     </div>
   );
 }

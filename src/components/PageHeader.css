@@ -1,0 +1,42 @@
+.page-header {
+  height: 220px;
+
+  /* menembus padding main-content */
+  margin-top: -24px;
+  margin-left: -24px;
+  margin-right: -24px;
+  margin-bottom: 32px;
+
+  background:
+    linear-gradient(
+      rgba(35, 90, 136, 0.85),
+      rgba(35, 90, 136, 0.85)
+    ),
+    url("/pageheader-batik.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 48px;
+
+  color: white;
+}
+
+.page-header h1 {
+  margin: 0;
+
+  font-size: 42px;
+  font-weight: 700;
+
+  color: white;
+}
+
+.page-header p {
+  margin-top: 8px;
+  font-size: 18px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.9);
+}

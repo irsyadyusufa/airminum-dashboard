@@ -1,39 +1,75 @@
-import KpiCard from "./components/KpiCard";
+import Sidebar from "./components/Sidebar";
+
+import Dashboard from "./pages/Dashboard";
+import AksesAirMinum from "./pages/AksesAirMinum";
+import Infrastruktur from "./pages/Infrastruktur";
+import Kelembagaan from "./pages/Kelembagaan";
+import Regulasi from "./pages/Regulasi";
+import Pendanaan from "./pages/Pendanaan";
+import Provinsi from "./pages/Provinsi";
+import KabupatenKota from "./pages/KabupatenKota";
+
+import { Routes, Route, Navigate } from "react-router-dom";
+
 import "./App.css";
-const kpis = [
-  {
-    title: "Target Akses",
-    value: "Akses Aman: 78%",
-  },
-  {
-    title: "Infrastruktur",
-    value: "Kebutuhan Kapasitas: 15.000 L/det",
-  },
-  {
-    title: "Kesehatan BUMD",
-    value: "BUMD FCR: 65%",
-  },
-  {
-    title: "Pendanaan",
-    value: "Funding Gap: Rp 75 Triliun",
-  },
-];
 
 function App() {
   return (
-    <div className="app">
-      <h1>Dashboard Air Minum Nasional</h1>
+    <div className="layout">
+      <Sidebar />
 
-      <div className="kpi-container">
-        {kpis.map((kpi) => (
-          <KpiCard
-            key={kpi.title}
-           title={kpi.title}
-           value={kpi.value}
+      <div className="main-content">
+        <Routes>
+
+          {/* buka website langsung masuk dashboard */}
+          <Route
+            path="/"
+            element={<Navigate to="/dashboard" replace />}
           />
-       ))}
-     </div>
-   </div>
+
+          <Route
+            path="/dashboard"
+            element={<Dashboard />}
+          />
+
+          <Route
+            path="/akses-air-minum"
+            element={<AksesAirMinum />}
+          />
+
+          <Route
+            path="/infrastruktur"
+            element={<Infrastruktur />}
+          />
+
+          <Route
+            path="/kelembagaan"
+            element={<Kelembagaan />}
+          />
+
+          <Route
+            path="/regulasi"
+            element={<Regulasi />}
+          />
+
+          <Route
+            path="/pendanaan"
+            element={<Pendanaan />}
+          />
+
+          <Route
+            path="/provinsi"
+            element={<Provinsi />}
+          />
+
+          <Route
+            path="/kabupaten-kota"
+            element={<KabupatenKota />}
+          />
+
+        </Routes>
+      </div>
+    </div>
   );
 }
 
