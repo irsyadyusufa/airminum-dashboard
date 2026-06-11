@@ -7,7 +7,7 @@ import Kelembagaan from "./pages/Kelembagaan";
 import Regulasi from "./pages/Regulasi";
 import Pendanaan from "./pages/Pendanaan";
 import Provinsi from "./pages/Provinsi";
-import KabupatenKota from "./pages/KabupatenKota";
+import Kabupatenkota from "./pages/Kabupatenkota";
 
 import { Routes, Route, Navigate } from "react-router-dom";
 
@@ -64,7 +64,7 @@ function App() {
 
           <Route
             path="/kabupaten-kota"
-            element={<KabupatenKota />}
+            element={<Kabupatenkota />}
           />
 
         </Routes>

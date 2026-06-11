@@ -11,7 +11,6 @@ function KpiCard({
   capaian,
   target,
   gap,
-  gapRt,
 }: KpiCardProps) {
   return (
     <div className="kpi-card">
