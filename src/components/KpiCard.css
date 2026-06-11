@@ -1,0 +1,31 @@
+.kpi-card {
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px;
+
+  background-color: white;
+}
+
+.kpi-card:hover {
+  transform: translateY(-3px);
+}
+
+.kpi-card h2 {
+  color: black;
+  margin: 0;
+  font-size: 18px;
+}
+
+.kpi-card p {
+  color: grey;
+}
+
+.kpi-card h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.kpi-card p {
+  margin-top: 8px;
+}

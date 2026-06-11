@@ -1,0 +1,9 @@
+.app {
+  padding: 24px;
+}
+
+.kpi-container {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
