@@ -6,6 +6,7 @@ import IndonesiaMap from "../components/IndonesiaMap";
 import { loadExcelData } from "../services/excelService";
 
 import "./Dashboard.css";
+import AnalyticsFilter from "../components/AnalyticsFilter";
 
 type KpiData = {
   title: string;
@@ -24,16 +25,30 @@ type KpiData = {
 function Dashboard() {
   const [kpis, setKpis] = useState<KpiData[]>([]);
 
+  const [
+    selectedProvince,
+    setSelectedProvince,
+  ] = useState<string | null>(null);
+const [selectedIndicator,
+  setSelectedIndicator] =
+  useState("PIP");
+
+const [selectedYear,
+  setSelectedYear] =
+  useState(2025);
+
   useEffect(() => {
     loadExcelData().then((rows: any[]) => {
       const indicators = ["SM", "PIP"];
 
       const kpiData = indicators.map(
         (indicatorId) => {
-          const indicatorRows = rows.filter(
-            (row) =>
-              row.id_indikator === indicatorId
-          );
+const indicatorRows = rows.filter(
+  (row) =>
+    row.id_indikator === indicatorId &&
+    row.level?.toLowerCase() ===
+      "nasional"
+);
 
           const sortedRows =
             indicatorRows.sort(
@@ -129,13 +144,54 @@ function Dashboard() {
           />
         ))}
       </div>
-<div className="analytics-section">
+<AnalyticsFilter
+  selectedIndicator={
+    selectedIndicator
+  }
+  selectedYear={
+    selectedYear
+  }
+  onChange={(
+    indicator,
+    year
+  ) => {
+    setSelectedIndicator(
+      indicator
+    );
 
-  <IndonesiaMap />
-
-  <ProvinceRanking />
-
-</div>
+    setSelectedYear(year);
+  }}
+/>
+      <div className="analytics-section">
+       <IndonesiaMap
+  selectedProvince={
+    selectedProvince
+  }
+  setSelectedProvince={
+    setSelectedProvince
+  }
+  selectedIndicator={
+    selectedIndicator
+  }
+  selectedYear={
+    selectedYear
+  }
+/>
+<ProvinceRanking
+  selectedProvince={
+    selectedProvince
+  }
+  setSelectedProvince={
+    setSelectedProvince
+  }
+  selectedIndicator={
+    selectedIndicator
+  }
+  selectedYear={
+    selectedYear
+  }
+/>
+      </div>
     </>
   );
 }

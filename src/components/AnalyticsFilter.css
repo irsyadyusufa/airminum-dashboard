@@ -1,0 +1,43 @@
+.analytics-filter {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 12px;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  border: 1px solid #cbd5e1;
+
+  background: white;
+
+  color: #475569;
+
+  padding: 10px 16px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: #f8fafc;
+}
+
+.filter-btn.active {
+  background: #235a88;
+
+  color: white;
+
+  border-color: #235a88;
+}
