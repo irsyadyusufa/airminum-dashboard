@@ -1,0 +1,18 @@
+.ranking-card {
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 24px;
+
+  box-shadow:
+    0 4px 16px
+    rgba(0, 0, 0, 0.08);
+}
+
+.ranking-card h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+
+  color: #2f3b52;
+}

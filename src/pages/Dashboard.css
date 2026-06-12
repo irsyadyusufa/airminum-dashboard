@@ -7,3 +7,29 @@
 
   gap: 24px;
 }
+
+.analytics-section {
+  display: grid;
+
+  grid-template-columns:
+    2fr
+    1fr;
+
+  gap: 24px;
+
+  margin-top: 24px;
+}
+
+.map-card {
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 24px;
+
+  box-shadow:
+    0 4px 16px
+    rgba(0,0,0,0.08);
+
+  min-height: 900px;
+}

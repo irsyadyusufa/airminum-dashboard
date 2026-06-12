@@ -54,7 +54,22 @@
    PROGRESS BAR
 ========================= */
 
+.timeline-labels {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #64748b;
+}
+
 .progress-bar {
+  position: relative;
+
   width: 100%;
   height: 22px;
 
@@ -68,32 +83,31 @@
 }
 
 .progress-fill {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
   height: 100%;
 
   background: #235a88;
 
-  border-radius: 999px;
-
   transition: width 0.5s ease;
 
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
-  padding-right: 8px;
-
-  box-sizing: border-box;
-
-  min-width: 70px;
+  z-index: 1;
 }
 
-.progress-label {
-  font-size: 12px;
-  font-weight: 700;
+.marker {
+  position: absolute;
 
-  color: white;
+  top: 0;
 
-  white-space: nowrap;
+  width: 1px;
+  height: 100%;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  z-index: 2;
 }
 
 /* =========================
@@ -174,4 +188,9 @@
 .status-red {
   background: #fee2e2;
   color: #991b1b;
+}
+
+.status-gray {
+  background: #e5e7eb;
+  color: #6b7280;
 }
