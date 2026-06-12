@@ -5,28 +5,20 @@ import "./Dashboard.css";
 
 const kpis = [
   {
-    title: "Akses Air Minum Aman",
+    title: "Rumah Tangga dengan Akses Air Minum Aman",
     capaian: "30,45%",
+    baseline: "28%",
+    annualTarget: "31%",
     target: "43%",
-    gap: "12,55%",
+    year: "2025",
   },
   {
-    title: "Akses Perpipaan",
+    title: "Rumah Tangga dengan Akses Air Minum Jaringan Perpipaan",
     capaian: "31,45%",
+    baseline: "24%",
+    annualTarget: "30%",
     target: "40,2%",
-    gap: "8,75%",
-  },
-  {
-    title: "BUMD Sehat",
-    capaian: "65%",
-    target: "100%",
-    gap: "35%",
-  },
-  {
-    title: "BUMD dengan Tarif FCR",
-    capaian: "46%",
-    target: "100%",
-    gap: "54%",
+    year: "2025",
   },
 ];
 
@@ -40,13 +32,15 @@ function Dashboard() {
 
       <div className="kpi-container">
         {kpis.map((kpi) => (
-          <KpiCard
+            <KpiCard
             key={kpi.title}
             title={kpi.title}
             capaian={kpi.capaian}
+            baseline={kpi.baseline}
             target={kpi.target}
-            gap={kpi.gap}
-          />
+            annualTarget={kpi.annualTarget}
+            year={kpi.year}
+            />
         ))}
       </div>
     </>
