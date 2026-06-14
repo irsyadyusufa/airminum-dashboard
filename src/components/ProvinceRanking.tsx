@@ -118,12 +118,11 @@ const provinceData = rows
           />
 
           <Tooltip
-            formatter={(value: number) => [
-              `${value.toFixed(2)}%`,
-              "PIP 2025",
+            formatter={(value) => [
+              `${Number(value).toFixed(2)}%`,
+              "Nilai",
             ]}
           />
-
           <Bar dataKey="capaian">
             {data.map(
               (entry, index) => (
@@ -154,10 +153,8 @@ const provinceData = rows
             <LabelList
               dataKey="capaian"
               position="right"
-              formatter={(
-                value: number
-              ) =>
-                `${value.toFixed(1)}%`
+              formatter={(value) =>
+                `${Number(value).toFixed(1)}%`
               }
               style={{
                 fill: "#334155",

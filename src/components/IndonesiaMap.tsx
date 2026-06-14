@@ -105,91 +105,92 @@ function IndonesiaMap({
   return (
     <div className="map-card">
       <MapContainer
-        center={indonesiaCenter}
-        zoom={5}
-        zoomControl={false}
-        dragging={false}
-        scrollWheelZoom={false}
-        doubleClickZoom={false}
-        touchZoom={false}
-        boxZoom={false}
-        keyboard={false}
-        className="indonesia-map"
+        {...({
+          center: indonesiaCenter,
+          zoom: 5,
+          zoomControl: false,
+          dragging: false,
+          scrollWheelZoom: false,
+          doubleClickZoom: false,
+          touchZoom: false,
+          boxZoom: false,
+          keyboard: false,
+          className: "indonesia-map",
+        } as any)}
       >
-        {geoData && (
-          <GeoJSON
-            key={`${selectedIndicator}-${selectedYear}-${selectedProvince}`}
-            data={geoData}
-            style={(feature: any) => ({
-              fillColor: getColor(
-                feature.properties
-                  .PROVINSI
-              ),
+{geoData && (
+  <GeoJSON
+    {...({
+      key: `${selectedIndicator}-${selectedYear}-${selectedProvince}`,
 
-              fillOpacity: 1,
+      data: geoData,
 
-              color:
-                feature.properties
-                  .PROVINSI ===
-                selectedProvince
-                  ? "#111827"
-                  : "#ffffff",
+      style: (feature: any) => ({
+        fillColor: getColor(
+          feature.properties.PROVINSI
+        ),
 
-              weight:
-                feature.properties
-                  .PROVINSI ===
-                selectedProvince
-                  ? 3
-                  : 1,
-            })}
-            onEachFeature={(
-              feature,
-              layer
-            ) => {
-              const province =
-                feature.properties
-                  .PROVINSI;
+        fillOpacity: 1,
 
-              const value =
-                provinceData[
-                  province
-                ];
+        color:
+          feature.properties.PROVINSI ===
+          selectedProvince
+            ? "#111827"
+            : "#ffffff",
 
-              layer.bindTooltip(
-                `
-                <div>
-                  <strong>${province}</strong>
-                  <br/>
-                  ${indicatorLabel}
-                  ${selectedYear}:
-                  ${
-                    value
-                      ? value.toFixed(2)
-                      : "No Data"
-                  }%
-                </div>
-                `,
-                {
-                  sticky: true,
-                }
-              );
+        weight:
+          feature.properties.PROVINSI ===
+          selectedProvince
+            ? 3
+            : 1,
+      }),
 
-              layer.on({
-                mouseover: () => {
-                  setSelectedProvince(
-                    province
-                  );
-                },
+      onEachFeature: (
+        feature: any,
+        layer: any
+      ) => {
+        const province =
+          feature.properties.PROVINSI;
 
-                mouseout: () => {
-                  setSelectedProvince(
-                    null
-                  );
-                },
-              });
-            }}
-          />
-        )}
+        const value =
+          provinceData[province];
+
+        layer.bindTooltip(
+          `
+          <div>
+            <strong>${province}</strong>
+            <br/>
+            ${indicatorLabel}
+            ${selectedYear}:
+            ${
+              value
+                ? value.toFixed(2)
+                : "No Data"
+            }%
+          </div>
+          `,
+          {
+            sticky: true,
+          }
+        );
+
+        layer.on({
+          mouseover: () => {
+            setSelectedProvince(
+              province
+            );
+          },
+
+          mouseout: () => {
+            setSelectedProvince(
+              null
+            );
+          },
+        });
+      },
+    } as any)}
+  />
+)}
       </MapContainer>
 
       <div className="map-legend">
