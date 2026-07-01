@@ -7,7 +7,7 @@ import {
 
 import "./IndonesiaMap.css";
 
-import { loadExcelData } from "../services/excelService";
+import { loadExcelData } from "../../services/excelService";
 
 type Props = {
   selectedProvince: string | null;
@@ -45,7 +45,7 @@ function IndonesiaMap({
       .then((res) => res.json())
       .then((data) => setGeoData(data));
 
-    loadExcelData().then((rows: any[]) => {
+    loadExcelData("akses").then((rows: any[]) => {
       const filteredRows = rows.filter(
         (row) =>
           row.id_indikator ===
@@ -83,18 +83,18 @@ function IndonesiaMap({
       provinceData[province];
 
     if (!value)
-      return "#e5e7eb";
+      return "#c7d2e7";
 
     if (value >= 60)
-      return "#0f3d66";
+      return "#0a355a";
 
     if (value >= 40)
-      return "#235a88";
+      return "#1462a1";
 
     if (value >= 20)
-      return "#8bb7dd";
+      return "#4f9adb";
 
-    return "#dbeafe";
+    return "#96c4ff";
   };
 
   const indicatorLabel =
@@ -199,7 +199,7 @@ function IndonesiaMap({
             className="legend-color"
             style={{
               background:
-                "#0f3d66",
+                "#0a355a",
             }}
           />
           ≥ 60%
@@ -210,7 +210,7 @@ function IndonesiaMap({
             className="legend-color"
             style={{
               background:
-                "#235a88",
+                "#1462a1",
             }}
           />
           40–59%
@@ -221,7 +221,7 @@ function IndonesiaMap({
             className="legend-color"
             style={{
               background:
-                "#8bb7dd",
+                "#4f9adb",
             }}
           />
           20–39%
@@ -232,7 +232,7 @@ function IndonesiaMap({
             className="legend-color"
             style={{
               background:
-                "#dbeafe",
+                "#96c4ff",
             }}
           />
           &lt; 20%

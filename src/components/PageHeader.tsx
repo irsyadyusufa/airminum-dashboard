@@ -1,7 +1,10 @@
+import type { ReactNode } from "react";
+
 import "./PageHeader.css";
+
 type PageHeaderProps = {
   title: string;
-  subtitle?: string;
+  subtitle?: ReactNode;
 };
 
 function PageHeader({

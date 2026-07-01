@@ -1,6 +1,8 @@
 import * as XLSX from "xlsx";
 
-export async function loadExcelData() {
+export async function loadExcelData(
+  sheetName: string
+) {
   const response = await fetch(
     "/data/data-airminum.xlsx"
   );
@@ -16,10 +18,13 @@ export async function loadExcelData() {
   );
 
   const sheet =
-    workbook.Sheets["akses_nas"];
+    workbook.Sheets[sheetName];
 
-  const data =
-    XLSX.utils.sheet_to_json(sheet);
+  if (!sheet) {
+    throw new Error(
+      `Sheet "${sheetName}" tidak ditemukan`
+    );
+  }
 
-  return data;
+  return XLSX.utils.sheet_to_json(sheet);
 }

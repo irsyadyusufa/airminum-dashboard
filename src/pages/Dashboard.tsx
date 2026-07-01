@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import ProvinceRanking from "../components/ProvinceRanking";
-import KpiCard from "../components/KpiCard";
+import ProvinceRanking from "../components/dashboard/ProvinceRanking";
+import KpiCard from "../components/dashboard/KpiCard";
 import PageHeader from "../components/PageHeader";
-import IndonesiaMap from "../components/IndonesiaMap";
+import IndonesiaMap from "../components/dashboard/IndonesiaMap";
 import { loadExcelData } from "../services/excelService";
 
 import "./Dashboard.css";
-import AnalyticsFilter from "../components/AnalyticsFilter";
+import AnalyticsFilter from "../components/dashboard/AnalyticsFilter";
 
 type KpiData = {
   title: string;
@@ -38,7 +38,7 @@ const [selectedYear,
   useState(2025);
 
   useEffect(() => {
-    loadExcelData().then((rows: any[]) => {
+    loadExcelData("akses").then((rows: any[]) => {
       const indicators = ["SM", "PIP"];
 
       const kpiData = indicators.map(

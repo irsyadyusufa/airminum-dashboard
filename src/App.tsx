@@ -1,7 +1,6 @@
 import Sidebar from "./components/Sidebar";
 
 import Dashboard from "./pages/Dashboard";
-import AksesAirMinum from "./pages/AksesAirMinum";
 import Infrastruktur from "./pages/Infrastruktur";
 import Kelembagaan from "./pages/Kelembagaan";
 import Regulasi from "./pages/Regulasi";
@@ -30,11 +29,6 @@ function App() {
           <Route
             path="/dashboard"
             element={<Dashboard />}
-          />
-
-          <Route
-            path="/akses-air-minum"
-            element={<AksesAirMinum />}
           />
 
           <Route

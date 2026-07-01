@@ -12,7 +12,7 @@ import {
   Tooltip,
 } from "recharts";
 
-import { loadExcelData } from "../services/excelService";
+import { loadExcelData } from "../../services/excelService";
 
 type ProvinceData = {
   wilayah: string;
@@ -52,7 +52,7 @@ function ProvinceRanking({
   >([]);
 
   useEffect(() => {
-    loadExcelData().then((rows: any[]) => {
+    loadExcelData("akses").then((rows: any[]) => {
 const provinceData = rows
   .filter(
     (row) =>

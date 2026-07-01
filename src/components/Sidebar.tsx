@@ -1,6 +1,5 @@
 import {
   LayoutDashboard,
-  Droplets,
   Factory,
   Building2,
   Scale,
@@ -33,16 +32,6 @@ function Sidebar() {
         >
           <LayoutDashboard size={20} />
           <span className="menu-text">Dashboard</span>
-        </NavLink>
-
-        <NavLink
-          to="/akses-air-minum"
-          className={({ isActive }) =>
-            isActive ? "menu-link active" : "menu-link"
-          }
-        >
-          <Droplets size={20} />
-          <span className="menu-text">Akses Air Minum</span>
         </NavLink>
 
         <NavLink
